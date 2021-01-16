@@ -3,20 +3,23 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MinifyPlugin = require("babel-minify-webpack-plugin");
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
     mode: 'production',
     optimization: {
         minimizer: [new OptimizeCssAssetsPlugin()]
     },
+    entry: {
+        index: "./src/index.js",
+    },
     output: {
-        filename: 'main.[contentHash].js'
+        filename: "js/pages/[name].[contentHash].js"
     },
     module: {
         rules: [
             {
                 test: /\.js$/,
-                exclude: /node_modules/, 
+                exclude: /node_modules/,
                 use: [
                     'babel-loader'
                 ]
@@ -42,7 +45,7 @@ module.exports = {
                 test: /\.html$/,
                 loader: 'html-loader',
                 options: {
-                    minimize: false,
+                    minimize: true,
                     attributes: false
                 }
             },
@@ -58,22 +61,19 @@ module.exports = {
             }
         ]
     },
+
     plugins: [
         new HtmlWebPackPlugin({
-            template: './src/index.html',
-            filename: './index.html'
-        }),
-
-        new MiniCssExtractPlugin({
-            filename: '[name].[contentHash].css',
-            ignoreOrder: false
+            template: 'src/html/index.html',
+            filename: './index.html',
+            chunks: ["index"]
         }),
         new CopyWebpackPlugin({
             patterns: [
-                { from: 'src/assets/', to: 'assets/' },
+                { from: 'src/css/static', to: 'css/' },
             ],
-        }), 
+        }),
         new MinifyPlugin(),
-        new CleanWebpackPlugin()
-    ]
+
+    ],
 }

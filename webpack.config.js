@@ -9,6 +9,13 @@ module.exports = {
     optimization: {
         minimizer: [new OptimizeCssAssetsPlugin()]
     },
+    entry: {
+        index: "./src/js/index.js",
+        characters: "./src/js/characters.js",
+    },
+    output: {
+        filename: "js/pages/[name].[contentHash].js"
+    },
     module: {
         rules: [
             {
@@ -58,7 +65,13 @@ module.exports = {
     plugins: [
         new HtmlWebPackPlugin({
             template: './src/index.html',
-            filename: './index.html'
+            filename: './index.html',
+            chunks: ["index"]
+        }),
+        new HtmlWebPackPlugin({
+            template: './src/html/characters.html',
+            filename: './html/characters.html',
+            chunks: ["characters"]
         }),
 
         new MiniCssExtractPlugin({
@@ -67,6 +80,7 @@ module.exports = {
         }),
         new CopyWebpackPlugin({
             patterns: [
+                { from: 'src/css/static', to: 'css/static' },
                 { from: 'src/assets/', to: 'assets/' },
             ],
         }), new CleanWebpackPlugin()
