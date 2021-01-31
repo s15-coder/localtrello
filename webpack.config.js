@@ -70,16 +70,6 @@ module.exports = {
             favicon: './src/assets/launcher_tab.png'
             
         }),
-
-        // new HtmlWebPackPlugin({
-        //     template: './src/html/login/index.html',
-        //     filename: './html/login/index.html',
-        //     favicon: 'src/assets/logo.jpg',
-        //     chunks: ["login"]
-        // }),
-
-        
-
         new MiniCssExtractPlugin({
             filename: '[name].css',
             ignoreOrder: false

@@ -66,11 +66,13 @@ module.exports = {
         new HtmlWebPackPlugin({
             template: './src/index.html',
             filename: './index.html',
-            chunks: ["index"]
+            chunks: ["index"],
+            favicon: './src/assets/launcher_tab.png'
         }),
         new CopyWebpackPlugin({
             patterns: [
                 { from: 'src/assets/', to: 'assets/' },
+                { from: 'src/css/', to: 'css/' },
             ],
         }),
         new MinifyPlugin(),
