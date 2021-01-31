@@ -1,10 +1,7 @@
-# Webpack-Configuration
-This folder contains the neccesaries configurations to working with webpack.
+# Local Trello
 
-To start project with node-modules and respective dependencies execute de command "npm install"
+This is an web application created that have some similar functions like Trello. The main difference between both applications is that Local Trello saves the information in LocalStorage. 
 
-## Don't forget apply the next commands to work with the project.
+This web application was created using HTML, CSS, JS an Vanilla and using some features of Webpack and Babel.
 
-```
-npm install
-```
+You can see the application working in the next [link]('https://s15-coder.github.io/localtrello/'). It's deployed in GitHub pages.
