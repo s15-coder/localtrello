@@ -1,0 +1,279 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    box-sizing: border-box;
+}
+
+header {
+    z-index: 100;
+    top: 0;
+    position: fixed;
+    box-shadow: 0 0 10px rgba(121, 118, 118, 0.616);
+    padding: 30px 0;
+    height: 90px;
+    background-color: rgb(127, 255, 212);
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    font-size: 27px;
+}
+
+.tasks__title {
+    font-weight: 700;
+    font-size: 21px;
+    color: #000;
+}
+
+.tasks {
+    min-height: 80vh;
+    max-height: calc(100vh - 90px);
+    margin-top: 90px;
+    justify-content: start;
+    overflow-x: auto;
+    display: flex;
+}
+
+.task-list {
+    padding: 0 20px;
+    overflow-y: auto;
+    margin: 0px 0 20px 0;
+    width: 350px;
+    min-width: 230px;
+}
+
+.tasks__title {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.task {
+    flex-direction: column;
+    display: flex;
+    cursor: grab;
+    padding: 0px 15px 15px;
+    border-radius: 20px;
+    border: 1px solid rgba(128, 128, 128, 0.192);
+    box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.185);
+    margin: 20px 0;
+    width: 100%;
+}
+
+.task__menu {
+    cursor: pointer;
+    font-weight: 900;
+    font-size: 20px;
+    border-radius: 90px;
+    align-self: flex-end;
+    padding: 5px 10px;
+}
+
+.task__menu:active {
+    color: rgba(0, 0, 0, 0.733);
+    background-color: rgb(90, 194, 159);
+}
+
+.task__menu::selection {
+    background-color: transparent
+}
+
+.task span {
+    width: 100%;
+}
+
+.new-task {
+    cursor: pointer;
+    border-radius: 150px;
+    line-height: .5;
+    box-shadow: 2px 2px 7px rgba(128, 128, 128, 0.671);
+    padding: 15px;
+    font-size: 30px;
+    background-color: rgb(127, 255, 212);
+    position: fixed;
+    bottom: 25px;
+    right: 10px;
+}
+
+.new-task:active {
+    background-color: rgb(55, 218, 163);
+    box-shadow: 0 0 7px rgba(128, 128, 128, 0.671);
+}
+
+.new-task::selection {
+    background-color: transparent;
+}
+
+.alert-create {
+    overflow: auto;
+    padding: 40px 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    z-index: 200;
+    position: fixed;
+    height: 100vh;
+    max-height: max-content;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.322);
+}
+
+.alert-card {
+    height: max-content;
+    flex-direction: column;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 80%;
+    width: 1000px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.459);
+}
+
+.alert-card__title {
+    font-size: 22px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.205);
+    padding: 0 0 20px 0;
+    margin-bottom: 5px;
+    text-align: center;
+    width: 100%;
+    background-color: rgb(119, 245, 203);
+}
+
+.close {
+    font-size: 25px;
+    cursor: pointer;
+    color: black;
+    padding-right: 10px;
+    text-align: end;
+    background-color: rgb(119, 245, 203);
+}
+
+.close::selection {
+    background-color: transparent;
+}
+
+.components-form {
+    padding: 15px 10vw;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.components-form span {
+    display: block;
+    margin-bottom: 8px;
+    text-align: center;
+    width: 100%;
+}
+
+.components-form__input-description,
+.components-form__input-title,
+.comboBox {
+    display: block;
+    width: 100%;
+}
+.components-form i {
+    color: rgb(250, 0,0);
+    font-style: normal;
+    font-size: 0;
+    width: 100%;
+}
+.components-form__input{
+    width: 100%;
+    margin-bottom: 10px;
+}
+.components-form__input-description,
+.components-form__input-title {
+    outline: none;
+    padding: 8px;
+    line-height: 1.2;
+    border: 1px solid rgba(128, 128, 128, 0.466);
+}
+.warn-empty{
+    outline: 2px solid rgb(250, 0,0);
+}
+.comboBox {
+    margin-bottom: 20px;
+    outline: none;
+    border: 1px solid rgba(128, 128, 128, 0.466);
+    padding: 4px;
+}
+
+.comboBox:focus,
+.components-form__input-description:focus,
+.components-form__input-title:focus {
+    outline: 2px solid aquamarine;
+}
+
+.button {
+    cursor: pointer;
+    background-color: rgb(127, 255, 212);
+    border: none;
+    margin: 10px;
+    padding: 7px 15px;
+    box-shadow: 2px 2px 5px rgba(83, 82, 82, 0.521);
+    outline: none;
+}
+
+.button:active {
+    background-color: rgb(76, 197, 157);
+    box-shadow: 0 0 5px rgba(83, 82, 82, 0.521);
+}
+
+.delete {
+    background-color: rgb(236, 34, 34);
+    color: #fff;
+}
+
+.delete:active {
+    background-color: rgb(177, 59, 59);
+}
+
+.buttons {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0 10px;
+    display: flex;
+}
+
+
+@media screen and (min-width: 700px) {
+
+    .task__menu:hover {
+        background-color: rgb(0, 247, 164);
+    }
+    
+    h1{
+        font-weight: 900;
+        font-size: 40px;
+    }
+    .task-list {
+        overflow: hidden;
+        max-height: max-content;
+    }
+    .tasks {
+        justify-content: center;
+        max-height: max-content;
+    }
+    .alert-card {
+        max-width: 600px;
+    }
+    .new-task{
+        font-size: 30px;
+     padding: 22px;
+        right: calc(2vw + 20px);
+        bottom: 40px;
+    }
+    .components-form__input{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .alert-create{
+        padding: calc(7vh + 30px) 0;
+    }
+}

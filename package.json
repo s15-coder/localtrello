@@ -7,7 +7,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:prod": "webpack --config webpack.prod.js",
     "build:dev": "webpack",
-    "rebuild": "rm -r dist/ && webpack --config webpack.prod.js",
     "start": "webpack-dev-server --open"
   },
   "author": "Esteban Muñoz",

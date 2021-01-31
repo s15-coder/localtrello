@@ -11,7 +11,7 @@ module.exports = {
     },
     entry: {
         index: "./src/js/index.js",
-        characters: "./src/js/characters.js",
+        // login: "./src/js/pages/login.js",
     },
     output: {
         filename: "js/pages/[name].[contentHash].js"
@@ -66,13 +66,19 @@ module.exports = {
         new HtmlWebPackPlugin({
             template: './src/index.html',
             filename: './index.html',
-            chunks: ["index"]
+            chunks: ["index"],
+            favicon: './src/assets/launcher_tab.png'
+            
         }),
-        new HtmlWebPackPlugin({
-            template: './src/html/characters.html',
-            filename: './html/characters.html',
-            chunks: ["characters"]
-        }),
+
+        // new HtmlWebPackPlugin({
+        //     template: './src/html/login/index.html',
+        //     filename: './html/login/index.html',
+        //     favicon: 'src/assets/logo.jpg',
+        //     chunks: ["login"]
+        // }),
+
+        
 
         new MiniCssExtractPlugin({
             filename: '[name].css',
@@ -80,9 +86,10 @@ module.exports = {
         }),
         new CopyWebpackPlugin({
             patterns: [
-                { from: 'src/css/static', to: 'css/static' },
-                { from: 'src/assets/', to: 'assets/' },
+                // { from: 'src/assets/', to: 'assets/' },
+                { from: 'src/css/', to: 'css/' },
             ],
-        }), new CleanWebpackPlugin()
+        }),
+         new CleanWebpackPlugin()
     ]
 }
