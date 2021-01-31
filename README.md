@@ -4,4 +4,4 @@ This is an web application created that have some similar functions like Trello.
 
 This web application was created using HTML, CSS, JS an Vanilla and using some features of Webpack and Babel.
 
-You can see the application working in the next [link]('https://s15-coder.github.io/localtrello/'). It's deployed in GitHub pages.
+You can see the application working in the next [link](https://s15-coder.github.io/localtrello/). It's deployed in GitHub pages.
